@@ -1,0 +1,18 @@
+.entry {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.degree {
+  font-size: var(--text-xl);
+}
+
+.institution {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.period {
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}

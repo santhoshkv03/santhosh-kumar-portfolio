@@ -1,0 +1,36 @@
+@use 'abstracts' as *;
+
+.summary {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 60ch;
+  font-size: var(--text-lg);
+  line-height: 1.55;
+}
+
+.principles {
+  display: grid;
+  margin-top: var(--space-7);
+  padding: 0;
+  list-style: none;
+
+  @include mq(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--space-5);
+  }
+}
+
+.principle {
+  padding-block: var(--space-5);
+  border-top: 2px solid var(--color-ink);
+}
+
+.principleTitle {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-lg);
+}
+
+.principleText {
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}

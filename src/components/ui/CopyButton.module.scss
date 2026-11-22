@@ -1,0 +1,21 @@
+@use 'abstracts' as *;
+
+.button {
+  min-height: 2.9rem;
+  padding-inline: var(--space-5);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-md);
+  background: transparent;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: var(--color-ink);
+  }
+}
+
+.status {
+  @include visually-hidden;
+}

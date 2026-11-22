@@ -1,0 +1,23 @@
+@use 'abstracts' as *;
+
+// Hidden until it receives keyboard focus, then pinned to the top-left corner.
+.skip {
+  @include visually-hidden;
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-4);
+  z-index: 100;
+
+  &:focus {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: var(--space-3) var(--space-4);
+    overflow: visible;
+    clip-path: none;
+    border-radius: var(--radius-md);
+    background: var(--color-ink);
+    color: var(--color-bg);
+    font-weight: 600;
+  }
+}

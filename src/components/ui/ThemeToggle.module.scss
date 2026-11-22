@@ -1,0 +1,29 @@
+.toggle {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: var(--color-ink);
+  }
+}
+
+// Icons are swapped with CSS so server and client markup always match.
+.sun {
+  display: none;
+}
+
+:global(:root[data-theme='dark']) .sun {
+  display: block;
+}
+
+:global(:root[data-theme='dark']) .moon {
+  display: none;
+}

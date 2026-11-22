@@ -1,0 +1,75 @@
+// Design tokens. Components read these CSS custom properties, never raw values,
+// so theming and future rebrands happen in one place.
+
+:root {
+  color-scheme: light;
+
+  // Typography
+  --font-display: 'Bricolage Grotesque Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Instrument Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --text-2xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --text-hero: clamp(2.25rem, 1.2rem + 4.6vw, 4.25rem);
+
+  // Spacing
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --section-gap: clamp(4rem, 9vw, 7.5rem);
+
+  // Layout
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --content-width: 72rem;
+  --header-height: 4rem;
+
+  // Shape and motion
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  // Colour (light)
+  --color-bg: #f2f5f4;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #e8eeec;
+  --color-ink: #10222a;
+  --color-ink-muted: #4a5e66;
+  --color-line: #cbd6d3;
+  --color-line-strong: #8da29f;
+  --color-accent: #0a6b66;
+  --color-accent-strong: #08524f;
+  --color-accent-ink: #ffffff;
+  --color-signal: #e8a317;
+  --color-focus: #0a6b66;
+  --color-shadow: rgb(16 34 42 / 0.28);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: #0c171b;
+  --color-surface: #12232a;
+  --color-surface-sunken: #0a1316;
+  --color-ink: #e6efec;
+  --color-ink-muted: #9db1b0;
+  --color-line: #23393f;
+  --color-line-strong: #4b6a6e;
+  --color-accent: #5ed0c4;
+  --color-accent-strong: #8ee3d9;
+  --color-accent-ink: #062321;
+  --color-signal: #f2b84b;
+  --color-focus: #8ee3d9;
+  --color-shadow: rgb(0 0 0 / 0.6);
+}

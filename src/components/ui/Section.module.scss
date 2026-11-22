@@ -1,0 +1,40 @@
+@use 'abstracts' as *;
+
+.section {
+  padding-block: var(--section-gap);
+  border-top: 1px solid var(--color-line);
+}
+
+.inner {
+  @include container;
+  display: grid;
+  gap: var(--space-6);
+
+  @include mq(lg) {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: var(--space-8);
+  }
+}
+
+.header {
+  @include mq(lg) {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-6));
+    align-self: start;
+  }
+}
+
+.title {
+  font-size: var(--text-2xl);
+}
+
+.intro {
+  margin-top: var(--space-3);
+  max-width: 30ch;
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}
+
+.body {
+  min-width: 0;
+}

@@ -1,0 +1,128 @@
+@use 'abstracts' as *;
+
+.list {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.role {
+  display: grid;
+  gap: var(--space-3);
+
+  @include mq(md) {
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+.meta {
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}
+
+.period {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+// The rule and dot form the timeline; the filled amber dot marks the current role.
+.content {
+  position: relative;
+  display: grid;
+  gap: var(--space-4);
+  padding-left: var(--space-5);
+  border-left: 1px solid var(--color-line);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.6rem;
+    left: -5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-line-strong);
+  }
+
+  &[data-current='true']::before {
+    background: var(--color-signal);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-signal) 30%, transparent);
+  }
+}
+
+.title {
+  font-size: var(--text-xl);
+}
+
+.company {
+  margin-top: calc(var(--space-3) * -1);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.project {
+  max-width: 62ch;
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+
+  strong {
+    color: var(--color-ink);
+  }
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: var(--space-4);
+  padding: 0;
+  list-style: none;
+
+  &[data-count='4'] {
+    @include mq(sm) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+.metric {
+  display: grid;
+  gap: var(--space-1);
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--color-accent);
+}
+
+.metricValue {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  line-height: 1.1;
+}
+
+.metricLabel {
+  color: var(--color-ink-muted);
+  font-size: var(--text-xs);
+  line-height: 1.4;
+}
+
+.highlights {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 64ch;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-sm);
+
+  li {
+    position: relative;
+    padding-left: var(--space-4);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.8em;
+      left: 0;
+      width: 0.5rem;
+      height: 1px;
+      background: var(--color-ink-muted);
+    }
+  }
+}
