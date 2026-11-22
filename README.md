@@ -71,9 +71,30 @@ src/
 
 ## Deploying
 
-The site is fully static, so any host works. On **Vercel**: import the repo, set
-`NEXT_PUBLIC_SITE_URL`, deploy. For other hosts, run `npm run build` and serve with `npm run start`
-(or add `output: 'export'` to `next.config.ts` for a pure static `out/` folder).
+### GitHub Pages (free, built in)
+
+1. Create a **public** repo on GitHub (for example `portfolio`) and push this project to the `main` branch.
+2. In the repo, open **Settings > Pages** and set **Source** to **GitHub Actions**.
+3. Push to `main` (or run **Actions > Deploy to GitHub Pages > Run workflow**). The workflow in
+   `.github/workflows/deploy.yml` builds a static export and publishes it.
+4. Your site goes live at `https://<username>.github.io/<repo-name>/`.
+
+The workflow reads the repo name automatically, so assets and the résumé link get the right prefix.
+Using a custom domain, or a repo named `<username>.github.io`? In `deploy.yml`, set
+`NEXT_PUBLIC_BASE_PATH` to `''` and `NEXT_PUBLIC_SITE_URL` to your address.
+
+Test the Pages build locally:
+
+```bash
+GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/portfolio npm run build   # output in ./out
+```
+
+Note: GitHub Pages cannot send custom response headers, so the security headers in `next.config.ts`
+apply only on hosts that run Next.js (such as Vercel).
+
+### Vercel
+
+Import the repo on vercel.com, set `NEXT_PUBLIC_SITE_URL`, and deploy. Every push to `main` redeploys.
 
 ## Possible next steps
 

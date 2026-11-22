@@ -12,7 +12,7 @@ export const profile: Profile = {
   email: 'santhoshkv298@gmail.com',
   phone: '+91 86608 84515',
   phoneHref: 'tel:+918660884515',
-  resumeUrl: '/Santhosh-Kumar-V-Resume.pdf',
+  resumeUrl: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/Santhosh-Kumar-V-Resume.pdf`,
   headline: 'I build front-end systems that teams can reuse and trust.',
   intro:
     'Senior Digital Engineer with 5.8 years of experience in React and TypeScript, delivering accessible, high-performance enterprise web applications, reusable component libraries, and AI-assisted migrations of legacy platforms.',
